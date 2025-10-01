@@ -22,3 +22,14 @@ def my_each_with_index
     i += 1
   end
 end
+
+# My_SELECT
+def my_select
+  array = []
+  i = 0
+  until i == self.length do 
+    array << self[i] if yield(self[i])
+    i += 1
+  end
+  array
+end
