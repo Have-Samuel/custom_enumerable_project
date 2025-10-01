@@ -22,7 +22,18 @@ module Enumerable
       self
     end
 
-    
+
+  # MY_SELECT
+  def my_select
+    if block_given?
+      new_array =[]
+      my_each  {  |i| new_array << i if yield(i) }
+      new_array
+    else
+      self
+    end
+  end
+
   end
 # You will first have to define my_each
 # on the Array class. Methods defined in
