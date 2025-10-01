@@ -100,3 +100,20 @@ def my_map
   new_array
 end
 
+puts arr.map { |i| i.odd? }
+my_map(arr) { |i| i.odd? }
+
+# INJECT
+def my_inject(initial)
+  accumulator = initial
+  i = 0
+  until i == self.length do
+    accumulator += yield(accumulator, self[i])
+    i += 1
+  end
+  accumulator
+end
+
+puts arr.inject? { |accumulator, number| accumulator + number }
+my_inject(arr) { |accumulator, number| accumulator + number }
+
