@@ -87,7 +87,23 @@ module Enumerable
       self
     end
   end
-  
+
+  # MY_INJECT
+  def my_inject(accumulator =0)
+    if block_given?
+      base = accumulator
+      i = 0
+      until i == self.length do 
+        base = yield (base, self[i])
+        i += 1
+      end
+      base
+    else
+      self
+    end
+  end
+end
+
 
 # You will first have to define my_each
 # on the Array class. Methods defined in
