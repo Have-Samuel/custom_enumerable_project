@@ -33,3 +33,16 @@ def my_select
   end
   array
 end
+
+# MY_ALL?
+def my_all?(arr)
+  result = true
+  i = 0
+  until i == arr.length do
+    i += 1
+  end
+  result
+end
+
+my_all?(arr) { |i| i < 100 }
+puts my_all?(arr) { |i| i < 100 }
