@@ -34,6 +34,19 @@ module Enumerable
     end
   end
 
+  # MY_ALL?
+  def my_all?
+    if block_given?
+      my_each { |i| result = false if yield(i) == false }
+      result
+    else
+      self
+    end
+  end
+
+  my_all(arr) { |i| i < 100 }
+  puts arr.my_all? { |i| i < 100 }
+
   end
 # You will first have to define my_each
 # on the Array class. Methods defined in
