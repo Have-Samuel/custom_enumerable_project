@@ -88,3 +88,15 @@ end
 
 puts arr.count { |i| i > 5 }
 my_count(arr) { |i| i > 5 }
+
+# MAP
+def my_map
+  new_array = []
+  i = 0
+  until i == self.length do 
+    new_array << yield(self[i])
+    i += 1
+  end
+  new_array
+end
+
