@@ -1,15 +1,16 @@
-module Enumerable
+arr = [1,2,3,4,5]
+
+# module Enumerable
   # Your code goes here
   def my_each
+  i = 0
     # Complete code here
-    self.each do |element|
-      return element if yield(element)
+    until i == arr.length
+      yield(arr[i])
+      i += 1
     end
-    nil
-  end
-end
-
-a=[1,2,3,4,5]
+  end 
+# end
 puts a.my_each { |x| x > 3 }
 # You will first have to define my_each
 # on the Array class. Methods defined in
