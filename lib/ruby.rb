@@ -46,3 +46,45 @@ end
 
 my_all?(arr) { |i| i < 100 }
 puts my_all?(arr) { |i| i < 100 }
+
+# ANY?
+def my_any?(arr)
+  result = false
+  i = 0
+  until i == arr.length do
+    result = true if yield(arr[i] )
+    i += 1
+  end
+  result
+end
+
+puts my_any?(arr) { |i| i > 100 }
+my_any?(arr) { |i| i > 100 }
+
+# NONE?
+def my_none?(arr)
+  result = true
+  i = 0
+  until i == arr.length do 
+    result = false if yield(arr[i])
+    i += 1
+  end
+  result
+end
+
+puts arr.none? { |i| i > 10 }
+my_none?(arr) { |i| i > 10 }
+
+# COUNT
+def my_count
+  count = 0
+  i = 0
+  until i == self.length do 
+    count += 1 if yield(self[i])
+    i += 1
+  end
+  count
+end
+
+puts arr.count { |i| i > 5 }
+my_count(arr) { |i| i > 5 }
