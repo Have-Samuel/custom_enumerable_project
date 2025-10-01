@@ -23,6 +23,8 @@ def my_each_with_index
   end
 end
 
+my_each_with_index(arr) { |i, index| puts "Index: #{index}, Value: #{i}" }
+
 # My_SELECT
 def my_select
   array = []
@@ -34,6 +36,8 @@ def my_select
   array
 end
 
+puts arr.select { |i| i.even? }
+my_select(arr) { |i| i.even? }
 # MY_ALL?
 def my_all?(arr)
   result = true
