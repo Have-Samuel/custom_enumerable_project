@@ -44,10 +44,30 @@ module Enumerable
     end
   end
 
-  my_all(arr) { |i| i < 100 }
-  puts arr.my_all? { |i| i < 100 }
-
+  # ANY?
+  def my_any?
+    if block_given?
+      result = false
+      my_each { |i| result = true if yield(i)}
+      result
+    else
+      self
+    end
   end
+
+  # MY_NONE?
+  def my_none?
+    if block_given?
+      result = true
+      my_each { |i| result = false if yield(i) }
+      result
+    else
+      self
+    end
+  end
+
+  
+
 # You will first have to define my_each
 # on the Array class. Methods defined in
 # your enumerable module will have access
