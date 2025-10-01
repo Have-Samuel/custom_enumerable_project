@@ -66,6 +66,27 @@ module Enumerable
     end
   end
 
+  # MY_COUNT
+  def my_count
+    if block_given?
+      count = 0
+      my_each { |i| count += 1 if yield(i) }
+      count
+    else
+      self
+    end
+  end
+
+  # MY_MAP
+  def my_map
+    if block_given?
+      new_array = []
+      my_each { |i| new_array << yield(i) }
+      new_array
+    else
+      self
+    end
+  end
   
 
 # You will first have to define my_each
